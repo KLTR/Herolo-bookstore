@@ -19,25 +19,22 @@ edit_book : Book;
 delete_book: Book;
 takenTitles : string[] = [];
 NormalizePipe: NormalizePipe = new NormalizePipe();
- index = 0;
- isDataShow = false;
+index = 0;
+isDataShow = false;
 @ViewChild(EditBookComponent) editModal;
-  constructor(
-    private apiService: ApiService,
-    private flashMessagesService: FlashMessagesService
+constructor(
+  private apiService: ApiService,
+  private flashMessagesService: FlashMessagesService
 ) {
     apiService.getBooks().subscribe(data =>{
-      this.books = data.books;
-      console.log(this.books[this.index]);
-      this.curr_books = this.books[this.index];
-      this.normalizeTitles();
-
-    })
+    this.books = data.books;
+    this.curr_books = this.books[this.index];
+    this.normalizeTitles();
+    });
    }
 
-  ngOnInit() {
-    // this.flashMessagesService.show('We are in about component!', { timeout: 500000 });
-  }
+ngOnInit() {  }
+
 // Methods
 
 // set reference to book to edit and pass to edit-book
@@ -50,6 +47,7 @@ editBook(book: Book, op: string){
   }
   this.editModal.initForm(this.edit_book);
 }
+
 //get edited book from edit-book and save it in books array
 saveBook($event){
   let index = 0;
@@ -60,37 +58,37 @@ saveBook($event){
 
   }else{
     this.toastMessage(`Congrats! you have just added a new book: ${$event.title}`,'alert-info',3000);
-
   }
-  //keep book at same index
+  // keep book at same index
   this.curr_books.splice(index, 0 ,$event);
   this.edit_book = null;
   this.normalizeTitles();
-
-  
 }
+
 switchCategory(index: number){
   this.index = index;
   this.curr_books = this.books[this.index];
 }
-setDeleteBook(book: Book){
-this.delete_book = book;
-jQuery("#delete-book-modal").modal("show");
 
+setDeleteBook(book: Book){
+  this.delete_book = book;
+  jQuery("#delete-book-modal").modal("show");
 }
+
 deleteBook(book: Book){
   this.curr_books.splice(this.curr_books.indexOf(book),1)
   this.normalizeTitles();
   this.toastMessage(`${book.title} has been deleted `,'alert-danger',3000);
   jQuery("#delete-book-modal").modal("hide");
-
 }
+
 isBookExist(book: Book) : boolean {
   if(this.curr_books.indexOf(book) !== -1){
     return true;
   }
   return false;
 }
+
 normalizeTitles(){
   // reset taken titles to allow changes
   this.takenTitles = [];
@@ -100,9 +98,9 @@ normalizeTitles(){
       this.takenTitles.push(title)
     }
   }
-  console.log(this.takenTitles);
 }
 
+// toggle css-class of data in card(book).
 toggleShown(){
   this.isDataShow = !this.isDataShow;
 }

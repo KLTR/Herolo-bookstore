@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
   }
+
    goToByScroll(id) {
      console.log(id);
     // Remove "link" from the ID
@@ -21,5 +22,6 @@ export class NavComponent implements OnInit {
             scrollTop: jQuery("#" + id).offset().top
         },
         'slow');
-}
+ }
+
 }

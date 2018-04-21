@@ -20,6 +20,12 @@
     cursor: pointer;
 }
 
+.mr-auto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* Mobile */
 
@@ -27,7 +33,7 @@
     .mr-auto {
         font-size: 25px;
         line-height: 25px;
-        background: #00000042;
+        background: #000000eb;
         text-align: center;
     }
 }
