@@ -1,0 +1,33 @@
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 9999999999999999999999;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .fa {
+    color: white;
+}
+
+.nav-item {
+    transition: 0.25s all ease-in;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+
+/* Mobile */
+
+@media only screen and (max-device-width: 667px) {
+    .mr-auto {
+        font-size: 25px;
+        line-height: 25px;
+        background: #00000042;
+        text-align: center;
+    }
+}

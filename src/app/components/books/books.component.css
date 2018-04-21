@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+.wrapper {
+    height: stretch;
+    padding-top: 15px;
+}
+
+.books-row {
+    padding: 0px 20px;
+}
+
+.book {
+    display: inline-block;
+    margin: 15px 0;
+    border: 5px solid white;
+    flex-grow: 1;
+    height: 35vh;
+    min-height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: center/contain no-repeat;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: box-shadow .2s ease-out;
+    -webkit-transition: box-shadow .2s ease-out;
+    box-shadow: .8px .9px 3px grey;
+}
+
+.book .header {
+    position: absolute;
+    top: 2px;
+    display: flex;
+    width: 100%;
+}
+
+.book .date {
+    font-size: 12px;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.book .menu-content {
+    margin-left: auto;
+    padding: 5px;
+    list-style-type: none;
+    font-size: 12px;
+    display: none;
+}
+
+.book:hover .menu-content {
+    display: inline;
+}
+
+.book .menu-content li {
+    display: inline-block;
+}
+
+.book .menu-content a {
+    color: #fff;
+    font-size: 16px;
+}
+
+.book .menu-content span {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Open Sans';
+}
+
+.book .title {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.book .title a {
+    color: #fff;
+}
+
+.book img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.book:focus,
+.book:hover {
+    box-shadow: 1px 8px 20px grey;
+}
+
+.book a {
+    transition: .25s all;
+    color: white;
+    margin-right: 5px;
+}
+
+.book .data {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    -webkit-transform: translateY(calc(70px + 1em));
+    transform: translateY(calc(70px + 1em));
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.book:hover .data {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    bottom: 25px;
+}
+
+.data-show {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    bottom: 25px;
+}
+
+.book .data .content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+}
+
+.book .author {
+    font-size: 12px;
+}
+
+.book .text {
+    height: 20px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.book:hover .menu-content span {
+    -webkit-transform: translate(-50%, -50px);
+    transform: translate(-50%, -50px);
+    opacity: 1;
+}
+
+.book .button {
+    display: block;
+    width: 100px;
+    margin: 2em auto 1em;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1;
+    position: relative;
+    font-weight: 700;
+    transform: translate(0, 50px);
+}
+
+
+/* Tabs */
+
+.nav-tabs {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    width: 100vw;
+    height: 100px;
+    background: #00000078;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    height: 100%;
+}
+
+.nav-tabs .nav-link {
+    background-color: #eee0;
+    transition: all 0.25s ease-in;
+}
+
+.nav-tabs .nav-link:hover {
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: white;
+}
+
+.nav-tabs .nav-item-active {
+    background-color: white;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 700;
+    color: black;
+}
+
+.add-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 80px;
+    right: 40px;
+    background-color: #0C9;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0.5px 0.5px 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.add-btn .fa {
+    color: white;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+}
+
+.add-btn:active {
+    background-color: #0C9;
+    transform: translateY(0);
+    box-shadow: 0.25px 0.25px 1px black;
+}
+
+
+/* Mobile */
+
+@media only screen and (max-device-width: 900px) {
+    .book .menu-content {
+        display: inline;
+    }
+    .nav-tabs {
+        flex-direction: column;
+    }
+    .nav-tabs .nav-item {
+        width: 100%;
+    }
+    .nav-tabs .nav-link {
+        width: 100%;
+    }
+    .add-btn {
+        bottom: 40px;
+    }
+}

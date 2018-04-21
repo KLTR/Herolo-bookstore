@@ -1,0 +1,155 @@
+{
+    "books": [
+        [{
+                "title": "@@creating@@ web !?$@animations*&^",
+                "author": "kirupa chinnathambi",
+                "date": "2012-06-18",
+                "price": "49.99",
+                "img": "../assets/images/animations.jpg"
+            },
+            {
+                "title": "restful web apis",
+                "author": "leonard richardson",
+                "date": "2016-05-18",
+                "price": "17.99",
+                "img": "../assets/images/api.jpg"
+            },
+            {
+                "title": "bootstrap",
+                "author": "jake sprulock",
+                "date": "2015-11-06",
+                "price": "24.00",
+                "img": "../assets/images/bootstrap.jpg"
+            },
+            {
+                "title": "web caching",
+                "author": "devon wiener",
+                "date": "2006-11-06",
+                "price": "72.39",
+                "img": "../assets/images/caching.png"
+            },
+            {
+                "title": "html5 canvas",
+                "author": "steve fulton",
+                "date": "2015-01-02",
+                "price": "52.99",
+                "img": "../assets/images/html.jpg"
+            },
+            {
+                "title": "javascript",
+                "author": "david flanagan",
+                "date": "2015-02-01",
+                "price": "119.00",
+                "img": "../assets/images/javascript.jpg"
+            },
+            {
+                "title": "php",
+                "author": "kevin tatroe",
+                "date": "2009-08-07",
+                "price": "44.49",
+                "img": "../assets/images/php.jpg"
+            },
+            {
+                "title": "learning angularJS",
+                "author": "ken williamson",
+                "date": "2009-08-09",
+                "price": "24.49",
+                "img": "../assets/images/angular.jpg"
+            },
+            {
+                "title": "learning react",
+                "author": "alex banks",
+                "date": "2018-05-13",
+                "price": "79.99",
+                "img": "../assets/images/react.jpg"
+            }
+        ],
+        [{
+
+                "title": "learning java",
+                "author": "daniel leuck",
+                "date": "2011-06-18",
+                "price": "29.99",
+                "img": "../assets/images/learn_java.jpg"
+            },
+            {
+                "title": "killer game programming",
+                "author": "andrew davison",
+                "date": "2006-02-22",
+                "price": "49.99",
+                "img": "../assets/images/game.jpg"
+            },
+            {
+                "title": "java the good parts",
+                "author": "jim waldo",
+                "date": "2009-02-01",
+                "price": "39.99",
+                "img": "../assets/images/java_good_parts.jpg"
+            },
+            {
+                "title": "hardcore java",
+                "author": "robert simons jr.",
+                "date": "2007-12-22",
+                "price": "44.99",
+                "img": "../assets/images/hardcore_java.jpg"
+            },
+            {
+                "title": "java cookbook",
+                "author": "ian f.darwin",
+                "date": "2000-03-07",
+                "price": "79.49",
+                "img": "../assets/images/java_cookbook.jpg"
+            }
+        ],
+        [{
+                "title": "mobile web",
+                "author": "maximiliano firtman",
+                "date": "2015-02-08",
+                "price": "49.99",
+                "img": "../assets/images/mobile-web.jpg"
+            },
+            {
+                "title": "mobile design",
+                "author": "brian fling",
+                "date": "2012-10-24",
+                "price": "59.99",
+                "img": "../assets/images/mobile-design.jpg"
+            },
+            {
+                "title": "design pattern",
+                "author": "tberesa neil",
+                "date": "2006-02-15",
+                "price": "84.99",
+                "img": "../assets/images/pattern.jpg"
+            },
+            {
+                "title": "ionic 2",
+                "author": "chris griggith",
+                "date": "2012-06-07",
+                "price": "79.49",
+                "img": "../assets/images/ionic.jpg"
+            },
+            {
+                "title": "mobile html5",
+                "author": "estelle weyl",
+                "date": "2011-09-27",
+                "price": "89.49",
+                "img": "../assets/images/mobile-html.png"
+            },
+            {
+                "title": "android",
+                "author": "zigurd mednieks",
+                "date": "2014-04-04",
+                "price": "89.49",
+                "img": "../assets/images/android.jpg"
+            },
+            {
+                "title": "jquery mobile",
+                "author": "maximiliano firtman",
+                "date": "2012-02-22",
+                "price": "99.49",
+                "img": "../assets/images/jquery.jpg"
+            }
+        ]
+    ]
+}

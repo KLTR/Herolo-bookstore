@@ -1,0 +1,71 @@
+<div id="books" class="wrapper">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a [ngClass]="{'nav-item-active': index == 0}" class="nav-link" (click)="switchCategory(0)"><i class="fa fa-"></i>Web Development</a>
+        </li>
+        <li class="nav-item">
+            <a [ngClass]="{'nav-item-active': index == 1}" class="nav-link" (click)="switchCategory(1)">Java Programming</a>
+        </li>
+        <li class="nav-item">
+            <a [ngClass]="{'nav-item-active': index == 2}" class="nav-link" (click)="switchCategory(2)">Mobile Web Development</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade active show" id="home">
+            <div class="row books-row">
+                <div *ngFor="let book of curr_books" (click)="toggleShown();" class="book col-xl-2 col-md-4 col-sm-12 " [ngStyle]="{ 'background-image': 'url(' + book.img + ')'}">
+                    <div class="overlay">
+                    </div>
+                    <div class="header">
+                        <div class="date">
+                            <span>{{book.date}}</span>
+                        </div>
+                        <ul class="menu-content">
+                            <li>{{book.price | currency}}</li>
+                            <li (click)="editBook(book,'edit')" data-toggle="modal" data-target="#edit-book-modal"><a class="fa fa-pencil"><span></span></a></li>
+                            <li (click)="setDeleteBook(book)" date-toggle="modal" data-target="#delete-book-modal"><a date-toggle="modal" data-target="#exampleModal" class="fa fa-trash"><span></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="data" [ngClass]="{'data-show':isDataShow}">
+                        <div class="content">
+                            <span class="author animate fadeInLeft delay-600">{{book.author | title:true}}</span>
+                            <h1 class="title animate fadeInLeft delay-200"><a>{{book.title | title:true}}</a></h1>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+                            <a href="*" class="button">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn add-btn bg-info" (click)="editBook(null,'add')" data-toggle="modal" data-target="#edit-book-modal">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Delete confirmation box -->
+<!-- Modal -->
+<div *ngIf="delete_book" class="modal fade" id="delete-book-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete book</h5>
+                <button type="button" class="close text-black" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete : " {{delete_book.title | title:true}} " by {{delete_book.author}}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="deleteBook(delete_book)">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-edit-book [editBookModal]=" edit_book " [takenTitles]="takenTitles " (editBookEvent)="saveBook($event) ">
+
+</app-edit-book>
