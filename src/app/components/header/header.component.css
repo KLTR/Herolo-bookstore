@@ -76,4 +76,7 @@ html,
     .info h1 {
         text-align: center;
     }
+    .header:before {
+        background-attachment: inherit;
+    }
 }
