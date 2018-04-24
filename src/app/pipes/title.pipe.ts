@@ -12,8 +12,9 @@ export class TitlePipe implements PipeTransform {
         if (value) {
           if (words) {
             // return value.replace(/\b\w/g, first => first.toLocaleUpperCase());
-            value =value.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-            return this.specialPipe.transform(value);
+            
+            value = this.specialPipe.transform(value);
+            return value.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
             
           } else {
             return value.charAt(0).toUpperCase() + value.slice(1);
